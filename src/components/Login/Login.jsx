@@ -19,9 +19,7 @@ const Login = () => {
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
+        
         <Button className="ms-3 px-4 mb-4" variant="primary" type="submit">
           Login
         </Button>
