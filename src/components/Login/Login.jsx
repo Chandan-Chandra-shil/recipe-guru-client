@@ -2,14 +2,15 @@ import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { getAuth } from "firebase/auth";
 import app from '../../firebase/firebase.Config';
 const Login = () => {
 
   const [logInError,setLogInError] = useState("")
   const { logIn } = useContext(AuthContext)
-  const provider = new GoogleAuthProvider();
+  const googleProvider = new GoogleAuthProvider();
+  const  githubProvider = new GithubAuthProvider()
     const auth = getAuth(app)
   
   const handleLogin = event => {
@@ -30,7 +31,7 @@ const Login = () => {
   }
 
   const handleGoogle = () => {
-    signInWithPopup(auth, provider)
+    signInWithPopup(auth, googleProvider)
       .then(result => {
         const loggedUser = result.user;
         console.log(loggedUser)
@@ -39,6 +40,17 @@ const Login = () => {
         console.log(error)
     })
   }
+  const handleeGithub = () => {
+    signInWithPopup(auth, githubProvider)
+      .then(result => {
+        const loggedUser = result.user;
+        console.log(loggedUser)
+      })
+      .catch(error => {
+      console.log(error)
+    })
+  }
+
   return (
     <Container className="mt-5 container mx-auto w-25 border rounded shadow  p-5">
       <h2 className="fw-semibold">Please Login </h2>
@@ -78,7 +90,7 @@ const Login = () => {
           <Button onClick={handleGoogle} variant="outline-primary" size="lg">
             Google
           </Button>
-          <Button variant="outline-secondary" size="lg">
+          <Button onClick={handleeGithub} variant="outline-secondary" size="lg">
             GitHub
           </Button>
         </div>
