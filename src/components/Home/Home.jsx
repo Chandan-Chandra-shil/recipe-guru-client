@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Card, Carousel, Col, Container, Row } from 'react-bootstrap';
+import { Button, Card, Carousel, Col, Container, ListGroup, Row } from 'react-bootstrap';
 
 import bannerOne from '../../assets/banner_01.jpg'
 import bannerTwo from '../../assets/banner_02.jpg'
@@ -53,23 +53,32 @@ const Home = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <Row xs={1} md={2} className="g-4">
-        {details.map((detail, id) => (
-          <Col>
-            <Card>
-              <Card.Img variant="top" className="img-fluid" src={detail.chef_picture_url} />
-              <Card.Body>
-                <Card.Title>{detail.chef_name}</Card.Title>
-                <Card.Text>
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
-      </Row>
+      <Container>
+        <div className="text-center mb-5">
+          <h1>Our Chef</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, ullam!</p>
+        </div>
+        <div className="row row-cols-1 my-md-4 row-cols-md-3 ">
+          {details.map((detail, id) => (
+            <div className=" mb-4   ">
+              <div>
+                <img
+                  className="img-thumbnail w-75 h-75"
+                  src={detail.chef_picture_url}
+                  alt=""
+                />
+                <div className="">
+                  <h2> Name : {detail.chef_name}</h2>
+                  <p> Experience : {detail.years_of_experience}</p>
+                  <p>Recipes : {detail.number_of_recipes}</p>
+                  <p> Likes :{detail.likes}</p>
+                </div>
+                <Button variant="outline-warning text-dark">Warning</Button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Container>
     </div>
   );
 };
