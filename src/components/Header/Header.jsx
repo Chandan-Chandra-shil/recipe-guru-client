@@ -4,9 +4,9 @@ import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <div>
+    <div >
       
-      <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
           <h1 className="text-warning fs-2">Recipe Guru</h1>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
