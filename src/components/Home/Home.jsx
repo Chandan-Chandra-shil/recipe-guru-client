@@ -4,19 +4,13 @@ import { Button, Card, Carousel, Col, Container, ListGroup, Row } from 'react-bo
 import bannerOne from '../../assets/banner_01.jpg'
 import bannerTwo from '../../assets/banner_02.jpg'
 import bannerThree from '../../assets/banner_03.jpg'
-import ChefCard from './ChefCard/ChefCard';
+
 import { useLoaderData } from "react-router-dom";
+import Services from "./Services/Services";
+import AboutUs from "./AboutUs/AboutUs";
 
 const Home = () => {
-  /* const [chefDetails, setChefDetails] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:5000/chefDetail")
-      .then((res) => res.json())
-      .then((data) => setChefDetails(data))
-      .catch((error) => console.log(error.message));
-  }, []);
-  */
+  
   const details = useLoaderData()
   console.log(details);
 
@@ -55,7 +49,7 @@ const Home = () => {
       </Carousel>
       <Container>
         <div className="text-center mb-5">
-          <h1>Our Chef</h1>
+          <h1>Our Special  Chef</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, ullam!</p>
         </div>
         <div className="row row-cols-1 my-md-4 row-cols-md-3 ">
@@ -79,6 +73,8 @@ const Home = () => {
           ))}
         </div>
       </Container>
+      <Services></Services>
+      <AboutUs></AboutUs>
     </div>
   );
 };
