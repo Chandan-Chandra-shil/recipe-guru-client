@@ -6,7 +6,7 @@ import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebas
 import { getAuth } from "firebase/auth";
 import app from '../../firebase/firebase.Config';
 const Login = () => {
-
+    const [success,setSuccess] = useState('')
   const [logInError,setLogInError] = useState("")
   const { logIn } = useContext(AuthContext)
   const googleProvider = new GoogleAuthProvider();
@@ -23,6 +23,8 @@ const Login = () => {
       .then(result => {
         const loggedUser = result.user;
         console.log(loggedUser)
+        setSuccess('user logged successfully')
+        form.reset()
       })
       .catch(error => {
         console.log(error.message)
@@ -52,7 +54,7 @@ const Login = () => {
   }
 
   return (
-    <Container className="mt-5 container mx-auto w-25 border rounded shadow  p-5">
+    <Container className="mt-5 container mx-auto w-25 border rounded shadow  p-5 mb-5">
       <h2 className="fw-semibold">Please Login </h2>
       <Form onSubmit={handleLogin} className=" ps-2">
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -75,6 +77,7 @@ const Login = () => {
           />
           <Form.Text className="text-muted">
             <p>{logInError}</p>
+            <h6>{success}</h6>
           </Form.Text>
         </Form.Group>
 

@@ -15,28 +15,29 @@ import AuthProvider from './provider/AuthProvider.jsx';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <Main></Main>,
     children: [
       {
-        path: '/',
-        element:<Home></Home>
+        path: "/",
+        element: <Home></Home>,
+        loader: () => fetch("http://localhost:5000/chefDetail"),
       },
       {
-        path: '/blog',
-        element:<Blog></Blog>
+        path: "/blog",
+        element: <Blog></Blog>,
       },
       {
-        path: '/login',
-        element:<Login></Login>
+        path: "/login",
+        element: <Login></Login>,
       },
       {
-        path: '/register',
-        element:<Register></Register>
-      }
-    ]
-  }
-])
+        path: "/register",
+        element: <Register></Register>,
+      },
+    ],
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
