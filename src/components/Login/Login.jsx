@@ -1,25 +1,71 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import { AuthContext } from '../../provider/AuthProvider';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { getAuth } from "firebase/auth";
+import app from '../../firebase/firebase.Config';
 const Login = () => {
+
+  const [logInError,setLogInError] = useState("")
+  const { logIn } = useContext(AuthContext)
+  const provider = new GoogleAuthProvider();
+    const auth = getAuth(app)
+  
+  const handleLogin = event => {
+    event.preventDefault()
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password)
+    logIn(email, password)
+      .then(result => {
+        const loggedUser = result.user;
+        console.log(loggedUser)
+      })
+      .catch(error => {
+        console.log(error.message)
+        setLogInError(error.message)
+    })
+  }
+
+  const handleGoogle = () => {
+    signInWithPopup(auth, provider)
+      .then(result => {
+        const loggedUser = result.user;
+        console.log(loggedUser)
+      })
+      .catch(error => {
+        console.log(error)
+    })
+  }
   return (
     <Container className="mt-5 container mx-auto w-25 border rounded shadow  p-5">
       <h2 className="fw-semibold">Please Login </h2>
-      <Form className=" ps-2">
+      <Form onSubmit={handleLogin} className=" ps-2">
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
+          <Form.Control
+            type="email"
+            name="email"
+            placeholder="Enter email"
+            required
+          />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
+          <Form.Control
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          <Form.Text className="text-muted">
+            <p>{logInError}</p>
+          </Form.Text>
         </Form.Group>
-        
+
         <Button className="ms-3 px-4 mb-4" variant="primary" type="submit">
           Login
         </Button>
@@ -29,7 +75,7 @@ const Login = () => {
               <small>Login with</small>
             </h2>
           </Form.Text>
-          <Button variant="outline-primary" size="lg">
+          <Button onClick={handleGoogle} variant="outline-primary" size="lg">
             Google
           </Button>
           <Button variant="outline-secondary" size="lg">

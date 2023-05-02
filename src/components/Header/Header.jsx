@@ -5,10 +5,7 @@ import { Link, NavLink } from 'react-router-dom';
 const Header = () => {
   return (
     <div>
-      {/*  <Link to="/">Home</Link>
-      <Link to="/blog">Blog</Link>
-      <Link to="/login">Login</Link>
-      <Link to="/register">Register</Link> */}
+      
       <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         <Container>
           <h1 className="text-warning fs-2">Recipe Guru</h1>
