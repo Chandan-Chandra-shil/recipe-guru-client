@@ -1,28 +1,31 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import banner from '../../../assets/banner.jpg'
+import aboutUS from '../../../assets/aboutUS.jpg'
 const AboutUs = () => {
   return (
     <div>
       <section className="py-5">
         <Container>
           <Row className="align-items-center">
-            <Col md={12} >
-              <h2 className='text-center mb-4 text-warning'>About Us</h2>
+            <Col md={4}>
+              <img
+                style={{ backgroundColor: "#FFD95A" }}
+                className="w-100 border p-4"
+                src={aboutUS}
+                alt=""
+              />
+            </Col>
+            <Col md={8}>
+              <h2 className=" mb-5 text-warning">About Us</h2>
+
               <p>
-                At our Indian food recipe website, we are passionate about
-                bringing the delicious and authentic flavors of Indian cuisine
-                to people around the world. Our team of experienced chefs is
-                dedicated to creating high-quality, flavorful dishes that
-                showcase the best of Indian cooking.
-              </p>
-              <p>
-                We believe that food is about more than just sustenance – it's
-                about culture, tradition, and community. That's why we strive to
-                not only provide delicious recipes, but also to share the
-                stories and history behind each dish. We want to give our
-                visitors a deeper understanding and appreciation of Indian food
-                and its place in the world.
+                Recipe Guru website, we are passionate about bringing the
+                delicious We believe that food is about more than just
+                sustenance – it's about culture, tradition, and community.
+                That's why we strive to not only provide delicious recipes, but
+                also to share the stories and history behind each dish. We want
+                to give our visitors a deeper understanding and appreciation of
+                Indian food and its place in the world.
               </p>
               <p>
                 Our website features a wide variety of Indian recipes, from

@@ -21,30 +21,21 @@ const Home = () => {
         <Carousel.Item>
           <img className="d-block w-100" src={bannerOne} alt="First slide" />
           <Carousel.Caption>
-            <h3 className="text-dark">First slide label</h3>
-            <p className="text-dark">
-              Nulla vitae elit libero, a pharetra augue mollis interdum.
-            </p>
+            <h3 className="text-dark text-warning">Special Food</h3>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={bannerTwo} alt="Second slide" />
 
           <Carousel.Caption>
-            <h3 className="text-dark">First slide label</h3>
-            <p className="text-dark">
-              Nulla vitae elit libero, a pharetra augue mollis interdum.
-            </p>
+            <h3 className="text-dark text-warning" >Special Food</h3>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={bannerThree} alt="Third slide" />
 
           <Carousel.Caption>
-            <h3 className="text-dark">First slide label</h3>
-            <p className="text-dark">
-              Nulla vitae elit libero, a pharetra augue mollis interdum.
-            </p>
+            <h3 className="text-dark text-warning">Special Food</h3>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

@@ -13,6 +13,7 @@ const ChefRecipes = () => {
     ingredients,
     cookingMethod,
     rating,
+    likes,
     number_of_recipes,
     years_of_experience,
     bio,
@@ -48,6 +49,10 @@ const ChefRecipes = () => {
             <span className="fw-semibold text-text-muted">Recipes : </span>
             {number_of_recipes}
           </p>
+          <p>
+            <span className="fw-semibold text-text-muted">Likes : </span>
+            {likes}
+          </p>
         </div>
         <div
           className="mb-5  border p-5"
@@ -57,7 +62,7 @@ const ChefRecipes = () => {
             <div className="card">
               <div className="card-body">
                 <p>
-                  <small className="fw-semibold"> Recipe Name : </small>
+                  <small className="fw-semibold"> Recipe Name : </small><br/>
                   <span className="fw-bold --bs-warning fs-5">
                     {recipes[0].recipeName}
                   </span>
@@ -74,6 +79,7 @@ const ChefRecipes = () => {
                 <p className="card-text">
                   Cooking Method : <br /> {recipes[0].cookingMethod}
                 </p>
+                <p>Rating : {recipes[0].rating}</p>
               </div>
               <div className="mx-auto">
                 <button className="btn btn-warning px-5 mb-2">Favorite</button>
@@ -81,6 +87,7 @@ const ChefRecipes = () => {
             </div>
             <div className="card">
               <div className="card-body">
+                <small className="fw-semibold"> Recipe Name : </small>
                 <h5 className="card-title">{recipes[1].recipeName}</h5>
                 <p>
                   <small className="fw-semibold">Ingredients : </small>
@@ -94,6 +101,7 @@ const ChefRecipes = () => {
                 <p className="card-text">
                   Cooking Method : <br /> {recipes[0].cookingMethod}
                 </p>
+                <p>Rating : {recipes[0].rating}</p>
               </div>
               <div className="mx-auto">
                 <button className="btn btn-warning px-5 mb-2">Favorite</button>
@@ -101,7 +109,9 @@ const ChefRecipes = () => {
             </div>
             <div className="card">
               <div className="card-body">
+                <small className="fw-semibold"> Recipe Name : </small>
                 <h5 className="card-title">{recipes[2].recipeName}</h5>
+
                 <p>
                   <small className="fw-semibold">Ingredients : </small>
                 </p>
@@ -114,6 +124,7 @@ const ChefRecipes = () => {
                 <p className="card-text">
                   Cooking Method : <br /> {recipes[0].cookingMethod}
                 </p>
+                <p>Rating : {recipes[0].rating}</p>
               </div>
               <div className="mx-auto">
                 <button className="btn btn-warning px-5 mb-2">Favorite</button>
