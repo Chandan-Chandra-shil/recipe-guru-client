@@ -50,10 +50,15 @@ const Home = () => {
       </Carousel>
       <Container>
         <div className="text-center mb-5">
-          <h1>Our Special Chefs</h1>
+          <h1 className="text-warning">Our special chefs</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
-            ullam!
+            <small>
+              Chefs are culinary professionals trained in all aspects of food
+              preparation.Their main responsibilities include planning menus,
+              <br></br>
+              overseeing the kitchen staff, and ensuring that the food meets
+              high-quality standards
+            </small>
           </p>
         </div>
 
