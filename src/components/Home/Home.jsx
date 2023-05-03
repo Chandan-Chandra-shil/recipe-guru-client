@@ -57,7 +57,7 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="row" style={{ marginTop: "" }}>
+        <div className="row">
           {details ? (
             details.map((detail) => (
               <div key={detail.id} className="col-lg-4 col-md-6 col-sm-12 mb-4">
@@ -65,7 +65,8 @@ const Home = () => {
                   <img
                     src={detail.chef_picture_url}
                     alt=""
-                    className="card-img-top img-thumbnail"
+                    style={{ height: "200px" }}
+                    className="rounded"
                   />
                   <div className="card-body">
                     <h5 className="card-title">{detail.chef_name}</h5>
@@ -79,7 +80,9 @@ const Home = () => {
                       <span> Recipes : {detail.number_of_recipes}</span>
                     </p>
                     <Link to={`/chefRecipes/${detail.id}`}>
-                      <button className=" text-dark fw-semibold btn btn-warning">View Recipes</button>
+                      <button className=" text-dark fw-semibold btn btn-warning">
+                        View Recipes
+                      </button>
                     </Link>
                   </div>
                 </div>
