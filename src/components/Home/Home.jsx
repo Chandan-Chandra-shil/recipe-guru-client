@@ -5,14 +5,15 @@ import bannerOne from '../../assets/banner_01.jpg'
 import bannerTwo from '../../assets/banner_02.jpg'
 import bannerThree from '../../assets/banner_03.jpg'
 
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Services from "./Services/Services";
 import AboutUs from "./AboutUs/AboutUs";
 
 const Home = () => {
   
   const details = useLoaderData()
-  console.log(details);
+ 
+  
 
   return (
     <div>
@@ -49,28 +50,44 @@ const Home = () => {
       </Carousel>
       <Container>
         <div className="text-center mb-5">
-          <h1>Our Special  Chef</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, ullam!</p>
+          <h1>Our Special Chefs</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
+            ullam!
+          </p>
         </div>
-        <div className="row row-cols-1 my-md-4 row-cols-md-3 ">
-          {details.map((detail, id) => (
-            <div className=" mb-4   ">
-              <div>
-                <img
-                  className="img-thumbnail w-75 h-75"
-                  src={detail.chef_picture_url}
-                  alt=""
-                />
-                <div className="">
-                  <h2> Name : {detail.chef_name}</h2>
-                  <p> Experience : {detail.years_of_experience}</p>
-                  <p>Recipes : {detail.number_of_recipes}</p>
-                  <p> Likes :{detail.likes}</p>
+
+        <div className="row" style={{ marginTop: "" }}>
+          {details ? (
+            details.map((detail) => (
+              <div key={detail.id} className="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div className="card">
+                  <img
+                    src={detail.chef_picture_url}
+                    alt=""
+                    className="card-img-top img-thumbnail"
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title">{detail.chef_name}</h5>
+                    <p className=" fs-5 text-muted">
+                      <span>
+                        Years of Experience : {detail.number_of_recipes}
+                      </span>
+                      <br />
+                      <span>Likes : {detail.likes}</span>
+                      <br />
+                      <span> Recipes : {detail.number_of_recipes}</span>
+                    </p>
+                    <Link to={`/chefRecipes/${detail.id}`}>
+                      <button className=" text-dark fw-semibold btn btn-warning">View Recipes</button>
+                    </Link>
+                  </div>
                 </div>
-                <Button variant="outline-warning text-dark">Warning</Button>
               </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <div>Loading...</div>
+          )}
         </div>
       </Container>
       <Services></Services>

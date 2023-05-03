@@ -8,7 +8,7 @@ const AboutUs = () => {
         <Container>
           <Row className="align-items-center">
             <Col md={12} >
-              <h2 className='text-center mb-4'>About Us</h2>
+              <h2 className='text-center mb-4 text-warning'>About Us</h2>
               <p>
                 At our Indian food recipe website, we are passionate about
                 bringing the delicious and authentic flavors of Indian cuisine
