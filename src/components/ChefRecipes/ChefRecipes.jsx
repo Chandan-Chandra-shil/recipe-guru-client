@@ -4,7 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
 
 const ChefRecipes = () => {
-  const notify = () => toast("Wow so easy !");
+  const notify = () => toast("WOW Added!");
   
 
  
@@ -87,8 +87,12 @@ const ChefRecipes = () => {
                 </p>
                 <p>Rating : {recipes[0].rating}</p>
               </div>
-              <div className="mx-auto">
-                <button className="btn btn-warning px-5 mb-2">Favorite</button>
+              <div className="mx-auto fw-semibold">
+                <button onClick={notify} className="btn btn-warning px-5 mb-2">
+                  Favorite
+                </button>
+
+                <ToastContainer />
               </div>
             </div>
             <div className="card">
@@ -109,8 +113,12 @@ const ChefRecipes = () => {
                 </p>
                 <p>Rating : {recipes[0].rating}</p>
               </div>
-              <div className="mx-auto">
-                <button className="btn btn-warning px-5 mb-2">Favorite</button>
+              <div className="mx-auto fw-semibold">
+                <button onClick={notify} className="btn btn-warning px-5 mb-2">
+                  Favorite
+                </button>
+
+                <ToastContainer />
               </div>
             </div>
             <div className="card">
@@ -132,12 +140,12 @@ const ChefRecipes = () => {
                 </p>
                 <p>Rating : {recipes[0].rating}</p>
               </div>
-              <div className="mx-auto">
+              <div className="mx-auto fw-semibold">
                 <button onClick={notify} className="btn btn-warning px-5 mb-2">
                   Favorite
                 </button>
 
-                <ToastContainer/>
+                <ToastContainer />
               </div>
             </div>
           </div>

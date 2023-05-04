@@ -14,11 +14,19 @@ const Footer = () => {
                 Recipe Guru is a website that provides a collection of delicious
                 recipes from all over the world.
               </p>
-              <div className='gap-2 d-flex'>
-                <span>hello</span>
-                <span>hello</span>
-                <span>hello</span>
-                <span>hello</span>
+              <div className="gap-2 d-flex">
+                <span>
+                  <Link>Facebook</Link>
+                </span>
+                <span>
+                  <Link>Youtube</Link>
+                </span>
+                <span>
+                  <Link>linkedin</Link>
+                </span>
+                <span>
+                  <Link>Instagram</Link>
+                </span>
               </div>
             </Col>
             <Col xs={12} md={3}>
