@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -10,24 +11,24 @@ const Footer = () => {
             <Col xs={12} md={6}>
               <h5>About Us</h5>
               <p>
-                Food Recipe is a website that provides a collection of delicious
+                Recipe Guru is a website that provides a collection of delicious
                 recipes from all over the world.
               </p>
+              <div className='gap-2 d-flex'>
+                <span>hello</span>
+                <span>hello</span>
+                <span>hello</span>
+                <span>hello</span>
+              </div>
             </Col>
             <Col xs={12} md={3}>
               <h5>Quick Links</h5>
               <ul className="list-unstyled">
                 <li>
-                  <a href="/">Home</a>
+                  <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <a href="/recipes">Recipes</a>
-                </li>
-                <li>
-                  <a href="/about">About</a>
-                </li>
-                <li>
-                  <a href="/contact">Contact Us</a>
+                  <Link to="/blog">Blog</Link>
                 </li>
               </ul>
             </Col>
@@ -35,9 +36,9 @@ const Footer = () => {
               <h5>Contact Us</h5>
               <ul className="list-unstyled">
                 <li>123 Main Street</li>
-                <li>Anytown, USA 12345</li>
+                <li>Anytown, India 12345</li>
                 <li>
-                  <a href="mailto:info@foodrecipe.com">info@foodrecipe.com</a>
+                  <a href="mailto:info@foodrecipe.com">info@recipeguru.com</a>
                 </li>
                 <li>
                   <a href="tel:+1234567890">(123) 456-7890</a>
@@ -47,7 +48,7 @@ const Footer = () => {
           </Row>
           <Row className="mt-3">
             <Col xs={12} className="text-center">
-              <p className="mb-0">&copy; 2023 Food Recipe</p>
+              <p className="mb-0">&copy; 2023 Recipe Guru</p>
             </Col>
           </Row>
         </Container>

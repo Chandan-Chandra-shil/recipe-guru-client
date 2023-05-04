@@ -16,7 +16,7 @@ const AboutUs = () => {
               />
             </Col>
             <Col md={8}>
-              <h2 className=" mb-5 text-warning">About Us</h2>
+              <h2 className="  text-warning">About Us</h2>
 
               <p>
                 Recipe Guru website, we are passionate about bringing the
