@@ -1,50 +1,94 @@
 import React from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
-
+import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import recipe from "../../../assets/recipeOne.jpg"
 
 const Services = () => {
   return (
     <div>
-      
-       <section className="py-5 bg-light">
-      <Container>
-        <h2 className="text-center mb-5">Our Indian Food Services</h2>
-        <Row>
-          <Col md={4} className="mb-4">
-            <Card>
-              <Card.Img variant="top" src="https://example.com/img1.jpg" />
-              <Card.Body>
-                <Card.Title>Delicious Recipes</Card.Title>
-                <Card.Text>
-                  Our chefs are experts in creating delicious Indian recipes that will satisfy your cravings for authentic flavors. From traditional curries to modern fusion dishes, we have a wide range of options that will leave you wanting more.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col md={4} className="mb-4">
-            <Card>
-              <Card.Img variant="top" src="https://example.com/img2.jpg" />
-              <Card.Body>
-                <Card.Title>Authentic Ingredients</Card.Title>
-                <Card.Text>
-                  We use only the freshest and most authentic Indian ingredients to create our dishes. From aromatic spices to high-quality meats and vegetables, our ingredients are carefully selected to ensure the best taste and quality.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col md={4} className="mb-4">
-            <Card>
-              <Card.Img variant="top" src="https://example.com/img3.jpg" />
-              <Card.Body>
-                <Card.Title>Easy Cooking Tips</Card.Title>
-                <Card.Text>
-                  Want to learn how to cook delicious Indian food at home? Our chefs will teach you all the tips and tricks you need to know to create restaurant-quality dishes in your own kitchen. From basic techniques to advanced skills, we've got you covered.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
+      <section className="py-5 bg-light">
+        <Container>
+          <h2 className="text-center text-warning mb-5">Popular Recipes</h2>
+          <Row md={3} lg={4} className="gap-2 justify-content-center">
+            <Col>
+              <Card style={{ width: "18rem" }}>
+                <Card.Img
+                  variant="top"
+                  src="https://www.tasteofhome.com/wp-content/uploads/2021/01/the-hyderabadi-chicken-biryani-is-photographed-at-akshaya-168918303.jpg?resize=768,768"
+                />
+                <Card.Body>
+                  <Card.Title>Biryani</Card.Title>
+                  <Card.Text>price:12$</Card.Text>
+                  <Button variant="warning">Order Now</Button>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card style={{ width: "18rem" }}>
+                <Card.Img
+                  variant="top"
+                  src="https://www.tasteofhome.com/wp-content/uploads/2023/02/GettyImages-1419665498-e1676404525553.jpg?resize=700,700"
+                />
+                <Card.Body>
+                  <Card.Title>Lamb Raan</Card.Title>
+                  <Card.Text>price:6$</Card.Text>
+                  <Button variant="warning">Order Now</Button>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card style={{ width: "18rem" }}>
+                <Card.Img
+                  variant="top"
+                  src="https://www.tasteofhome.com/wp-content/uploads/2023/02/GettyImages-1195561785-e1676404786195.jpg?resize=700,700"
+                />
+                <Card.Body>
+                  <Card.Title>Chicken Jalfrezi</Card.Title>
+                  <Card.Text>price:6$</Card.Text>
+                  <Button variant="warning">Order Now</Button>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card style={{ width: "18rem" }}>
+                <Card.Img
+                  variant="top"
+                  src="https://www.tasteofhome.com/wp-content/uploads/2023/02/GettyImages-1186139336-e1676412150794.jpg?resize=700,700"
+                />
+                <Card.Body>
+                  <Card.Title>Laal Maas</Card.Title>
+                  <Card.Text>price:6$</Card.Text>
+                  <Button variant="warning">Order Now</Button>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card style={{ width: "18rem" }}>
+                <Card.Img
+                  variant="top"
+                  src="https://www.tasteofhome.com/wp-content/uploads/2023/02/GettyImages-1163712646-e1676412473421.jpg?resize=700,700"
+                />
+                <Card.Body>
+                  <Card.Title>Laal Maas</Card.Title>
+                  <Card.Text>price:10$</Card.Text>
+                  <Button variant="warning">Order Now</Button>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card style={{ width: "18rem" }}>
+                <Card.Img
+                  variant="top"
+                  src="https://www.tasteofhome.com/wp-content/uploads/2019/08/Sheet-Pan-Tandoori-Chicken_EXPS_FT19_228530_F_0725_1-12.jpg?resize=700,700"
+                />
+                <Card.Body>
+                  <Card.Title>Tandoori Chicken</Card.Title>
+                  <Card.Text>price:9$</Card.Text>
+                  <Button variant="warning">Order Now</Button>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
       </section>
     </div>
   );

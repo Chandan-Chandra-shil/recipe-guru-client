@@ -4,18 +4,29 @@ import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <div >
-      
+    <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
           <h1 className="text-warning fs-2">Recipe Guru</h1>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto gap-4 ">
-              <NavLink className="text-decoration-none fs-5" to="/">
+              <NavLink
+                style={{ textDecoration: "none", color: "yellow" }}
+                className={({ isActive, isPending }) =>
+                  isActive ? "text-white" : ""
+                }
+                to="/"
+              >
                 Home
               </NavLink>
-              <NavLink className="text-decoration-none fs-5" to="/blog">
+              <NavLink
+                style={{ textDecoration: "none", color: "yellow" }}
+                className={({ isActive, isPending }) =>
+                  isActive ? "text-white text-decoration-none" : ""
+                }
+                to="/blog"
+              >
                 Blog
               </NavLink>
             </Nav>

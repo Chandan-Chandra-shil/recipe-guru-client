@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Card, Container } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
+import { ToastContainer, toast } from "react-toastify";
 
 const ChefRecipes = () => {
+  const notify = () => toast("Wow so easy !");
+  
 
- /* const [details,setDetails] = useState('') */
+ 
   const data = useLoaderData()
   const {
     chef_name,
@@ -13,6 +16,7 @@ const ChefRecipes = () => {
     ingredients,
     cookingMethod,
     rating,
+    short,
     likes,
     number_of_recipes,
     years_of_experience,
@@ -29,7 +33,7 @@ const ChefRecipes = () => {
           src={chef_picture_url}
           alt=""
         />
-        <p className="text-warning fw-bold fs-4">{chef_name}</p>
+        <p className="text-warning fw-bold fs-4 border-bottom">{short}</p>
       </div>
       <Container>
         <div className="mb-5">
@@ -62,7 +66,8 @@ const ChefRecipes = () => {
             <div className="card">
               <div className="card-body">
                 <p>
-                  <small className="fw-semibold"> Recipe Name : </small><br/>
+                  <small className="fw-semibold"> Recipe Name : </small>
+                  <br />
                   <span className="fw-bold --bs-warning fs-5">
                     {recipes[0].recipeName}
                   </span>
@@ -127,7 +132,13 @@ const ChefRecipes = () => {
                 <p>Rating : {recipes[0].rating}</p>
               </div>
               <div className="mx-auto">
-                <button className="btn btn-warning px-5 mb-2">Favorite</button>
+                <button onClick={notify} className="btn btn-warning px-5 mb-2">
+                  Favorite
+                </button>
+
+                <ToastContainer
+                  
+                />
               </div>
             </div>
           </div>
