@@ -69,8 +69,8 @@ const Register = () => {
             placeholder="Password"
             required
           />
-          <Form.Text className="text-muted">
-            <p> {success}</p>
+          <Form.Text className="">
+            <p className="text-warning"> {success}</p>
             <p className="text-danger fs-5">{registerError}</p>
           </Form.Text>
         </Form.Group>

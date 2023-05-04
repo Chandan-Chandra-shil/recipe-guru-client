@@ -12,6 +12,7 @@ import Register from './components/Register/Register.jsx';
 import Blog from './components/Blog/Blog.jsx';
 import AuthProvider from './provider/AuthProvider.jsx';
 import ChefRecipes from './components/ChefRecipes/ChefRecipes.jsx';
+import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 
 
 
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
         loader: ({ params }) => fetch(`http://localhost:5000/viewRecipes/${params.id}`),
 
       },
+      {
+        path: '*',
+        element:<ErrorPage></ErrorPage>
+      }
     ],
   },
 ]);
