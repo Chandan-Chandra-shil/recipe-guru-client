@@ -1,57 +1,68 @@
-import React, { useContext, useState } from 'react';
-import { Button, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { AuthContext } from '../../provider/AuthProvider';
-import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import React, { useContext, useState } from "react";
+import { Button, Container, Form } from "react-bootstrap";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
+import {
+  GithubAuthProvider,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 import { getAuth } from "firebase/auth";
-import app from '../../firebase/firebase.Config';
+import app from "../../firebase/firebase.Config";
 const Login = () => {
-    const [success,setSuccess] = useState('')
-  const [logInError,setLogInError] = useState("")
-  const { logIn } = useContext(AuthContext)
+  const location = useLocation();
+  console.log(location);
+  const navigate = useNavigate();
+
+  const from = location.state?.from?.pathname || "/";
+  console.log(from)
+  const [success, setSuccess] = useState("");
+  const [logInError, setLogInError] = useState("");
+  const { logIn } = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
-  const  githubProvider = new GithubAuthProvider()
-    const auth = getAuth(app)
-  
-  const handleLogin = event => {
-    event.preventDefault()
+  const githubProvider = new GithubAuthProvider();
+  const auth = getAuth(app);
+
+  const handleLogin = (event) => {
+    event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password)
+    console.log(email, password);
     logIn(email, password)
-      .then(result => {
+      .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser)
-        setSuccess('user logged successfully')
-        form.reset()
+        console.log(loggedUser);
+        setSuccess("user logged successfully");
+        navigate(from, { replace: true });
+        form.reset();
       })
-      .catch(error => {
-        console.log(error.message)
-        setLogInError(error.message)
-    })
-  }
+      .catch((error) => {
+        console.log(error.message);
+        setLogInError(error.message);
+      });
+  };
 
   const handleGoogle = () => {
     signInWithPopup(auth, googleProvider)
-      .then(result => {
+      .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser)
+        console.log(loggedUser);
       })
-      .catch(error => {
-        console.log(error)
-    })
-  }
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   const handleeGithub = () => {
     signInWithPopup(auth, githubProvider)
-      .then(result => {
+      .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser)
+        console.log(loggedUser);
       })
-      .catch(error => {
-      console.log(error)
-    })
-  }
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <Container className="mt-5 container mx-auto w-25 border rounded shadow  p-5 mb-5">

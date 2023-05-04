@@ -7,9 +7,11 @@ const Services = () => {
     <div>
       <section className="py-5 bg-light">
         <Container>
-          <h2 className="text-center text-warning mb-5">Popular Recipes</h2>
-          <Row md={3} lg={4} className="gap-2 justify-content-center">
-            <Col>
+          <h2 className="text-center text-warning fs-1 mb-5">
+            Popular Recipes
+          </h2>
+          <Row md={3} lg={4} className="gap-2 ">
+            <Col className=' mb-4'>
               <Card style={{ width: "18rem" }}>
                 <Card.Img
                   variant="top"

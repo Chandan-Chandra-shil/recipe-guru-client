@@ -1,19 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { Button, Card, Carousel, Col, Container, ListGroup, Row } from 'react-bootstrap';
+import {
+  Button,
+  Card,
+  Carousel,
+  Col,
+  Container,
+  ListGroup,
+  Row,
+} from "react-bootstrap";
 
-import bannerOne from '../../assets/banner_01.jpg'
-import bannerTwo from '../../assets/banner_02.jpg'
-import bannerThree from '../../assets/banner_03.jpg'
+import bannerOne from "../../assets/banner_01.jpg";
+import bannerTwo from "../../assets/banner_02.jpg";
+import bannerThree from "../../assets/banner_03.jpg";
 
 import { Link, useLoaderData } from "react-router-dom";
 import Services from "./Services/Services";
 import AboutUs from "./AboutUs/AboutUs";
 
 const Home = () => {
-  
-  const details = useLoaderData()
- 
-  
+  const details = useLoaderData();
 
   return (
     <div>
@@ -28,7 +33,7 @@ const Home = () => {
           <img className="d-block w-100" src={bannerTwo} alt="Second slide" />
 
           <Carousel.Caption>
-            <h3 className="text-dark text-warning" >Special Food</h3>
+            <h3 className="text-dark text-warning">Special Food</h3>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -41,15 +46,13 @@ const Home = () => {
       </Carousel>
       <Container>
         <div className="text-center mb-5">
-          <h1 className="text-warning">Our special chefs</h1>
-          <p>
-            <small>
-              Chefs are culinary professionals trained in all aspects of food
-              preparation.Their main responsibilities include planning menus,
-              <br></br>
-              overseeing the kitchen staff, and ensuring that the food meets
-              high-quality standards
-            </small>
+          <h1 className="text-warning fs-1 mb-3">Our special chefs</h1>
+          <p className="fs-5" >
+            Chefs are culinary professionals trained in all aspects of food
+            preparation.Their main responsibilities include planning menus,
+            <br></br>
+            overseeing the kitchen staff, and ensuring that the food meets
+            high-quality standards
           </p>
         </div>
 

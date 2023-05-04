@@ -13,7 +13,8 @@ import Blog from './components/Blog/Blog.jsx';
 import AuthProvider from './provider/AuthProvider.jsx';
 import ChefRecipes from './components/ChefRecipes/ChefRecipes.jsx';
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
-
+import PrivateRoute from './routes/PrivateRoute.jsx';
+import "react-toastify/dist/ReactToastify.css";
 
 
 const router = createBrowserRouter([
@@ -24,7 +25,8 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/viewRecipes"),
+        loader: () =>
+          fetch("https://repice-guru-server.vercel.app/viewRecipes"),
       },
       {
         path: "/blog",
@@ -40,14 +42,16 @@ const router = createBrowserRouter([
       },
       {
         path: "/chefRecipes/:id",
-        element: <ChefRecipes></ChefRecipes>,
-        loader: ({ params }) => fetch(`http://localhost:5000/viewRecipes/${params.id}`),
-
+        element: <PrivateRoute><ChefRecipes></ChefRecipes></PrivateRoute>,
+        loader: ({ params }) =>
+          fetch(
+            `https://repice-guru-server.vercel.app/viewRecipes/${params.id}`
+          ),
       },
       {
-        path: '*',
-        element:<ErrorPage></ErrorPage>
-      }
+        path: "*",
+        element: <ErrorPage></ErrorPage>,
+      },
     ],
   },
 ]);

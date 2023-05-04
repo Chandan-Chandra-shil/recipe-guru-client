@@ -8,7 +8,7 @@ const Main = () => {
   return (
     <div>
       <Header></Header>
-      <div>{navigation.state === "loading" && "Loading.........." }</div>
+     
       <Outlet></Outlet>
       <Footer></Footer>
       

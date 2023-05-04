@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Card, Container } from 'react-bootstrap';
+import React from 'react';
+import {  Container } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
 
@@ -9,6 +9,7 @@ const ChefRecipes = () => {
 
  
   const data = useLoaderData()
+  console.log(".............. data",data)
   const {
     chef_name,
     chef_picture_url,
@@ -136,9 +137,7 @@ const ChefRecipes = () => {
                   Favorite
                 </button>
 
-                <ToastContainer
-                  
-                />
+                <ToastContainer/>
               </div>
             </div>
           </div>
