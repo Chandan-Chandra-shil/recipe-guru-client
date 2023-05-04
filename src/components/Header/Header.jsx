@@ -37,6 +37,7 @@ const Header = () => {
               >
                 Blog
               </NavLink>
+             
             </Nav>
             <Nav>
               <Link to="/login">

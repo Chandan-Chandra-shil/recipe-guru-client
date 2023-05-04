@@ -17,6 +17,7 @@ import PrivateRoute from './routes/PrivateRoute.jsx';
 import "react-toastify/dist/ReactToastify.css";
 
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -48,6 +49,7 @@ const router = createBrowserRouter([
             `https://repice-guru-server.vercel.app/viewRecipes/${params.id}`
           ),
       },
+    
       {
         path: "*",
         element: <ErrorPage></ErrorPage>,

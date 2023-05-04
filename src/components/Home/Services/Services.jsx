@@ -1,17 +1,19 @@
 import React from 'react';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
-import recipe from "../../../assets/recipeOne.jpg"
+
+import { ToastContainer, toast } from "react-toastify";
 
 const Services = () => {
+  const notify = () => toast("Complete Your Order!");
   return (
     <div>
-      <Container className="py-5 bg-light">
+      <Container className="py-5 bg-light m-sm-auto">
         <h2 className="text-center text-warning fs-1 mb-5">Popular Recipes</h2>
-        <Row md={3} lg={4} className="gap-2 justify-content-center ">
+        <Row xs={1} md={3} lg={4} className="gap-2 justify-content-center  ">
           <Col className=" mb-4  ">
             <Card
               className="border border-warning p-2"
-              style={{ width: "18rem" }}
+              
             >
               <Card.Img
                 variant="top"
@@ -20,14 +22,19 @@ const Services = () => {
               <Card.Body>
                 <Card.Title>Biryani</Card.Title>
                 <Card.Text>price:12$</Card.Text>
-                <Button variant="warning">Order Now</Button>
+                <div>
+                  <Button onClick={notify} variant="warning">
+                    Order Now
+                  </Button>
+                  <ToastContainer />
+                </div>
               </Card.Body>
             </Card>
           </Col>
           <Col className=" mb-4 ">
             <Card
               className="border border-warning p-2"
-              style={{ width: "18rem" }}
+              
             >
               <Card.Img
                 variant="top"
@@ -36,14 +43,19 @@ const Services = () => {
               <Card.Body>
                 <Card.Title>Lamb Raan</Card.Title>
                 <Card.Text>price:6$</Card.Text>
-                <Button variant="warning">Order Now</Button>
+                <div>
+                  <Button onClick={notify} variant="warning">
+                    Order Now
+                  </Button>
+                  <ToastContainer />
+                </div>
               </Card.Body>
             </Card>
           </Col>
           <Col className=" mb-4 ">
             <Card
               className="border border-warning p-2"
-              style={{ width: "18rem" }}
+              
             >
               <Card.Img
                 variant="top"
@@ -52,14 +64,19 @@ const Services = () => {
               <Card.Body>
                 <Card.Title>Chicken Jalfrezi</Card.Title>
                 <Card.Text>price:6$</Card.Text>
-                <Button variant="warning">Order Now</Button>
+                <div>
+                  <Button onClick={notify} variant="warning">
+                    Order Now
+                  </Button>
+                  <ToastContainer />
+                </div>
               </Card.Body>
             </Card>
           </Col>
           <Col className=" mb-4 ">
             <Card
               className="border border-warning p-2"
-              style={{ width: "18rem" }}
+              
             >
               <Card.Img
                 variant="top"
@@ -68,14 +85,19 @@ const Services = () => {
               <Card.Body>
                 <Card.Title>Laal Maas</Card.Title>
                 <Card.Text>price:6$</Card.Text>
-                <Button variant="warning">Order Now</Button>
+                <div>
+                  <Button onClick={notify} variant="warning">
+                    Order Now
+                  </Button>
+                  <ToastContainer />
+                </div>
               </Card.Body>
             </Card>
           </Col>
           <Col className=" mb-4 ">
             <Card
               className="border border-warning p-2"
-              style={{ width: "18rem" }}
+              
             >
               <Card.Img
                 variant="top"
@@ -84,14 +106,19 @@ const Services = () => {
               <Card.Body>
                 <Card.Title>Laal Maas</Card.Title>
                 <Card.Text>price:10$</Card.Text>
-                <Button variant="warning">Order Now</Button>
+                <div>
+                  <Button onClick={notify} variant="warning">
+                    Order Now
+                  </Button>
+                  <ToastContainer />
+                </div>
               </Card.Body>
             </Card>
           </Col>
           <Col className=" mb-4 ">
             <Card
               className="border border-warning p-2"
-              style={{ width: "18rem" }}
+              
             >
               <Card.Img
                 variant="top"
@@ -100,7 +127,12 @@ const Services = () => {
               <Card.Body>
                 <Card.Title>Tandoori Chicken</Card.Title>
                 <Card.Text>price:9$</Card.Text>
-                <Button variant="warning">Order Now</Button>
+                <div>
+                  <Button onClick={notify} variant="warning">
+                    Order Now
+                  </Button>
+                  <ToastContainer />
+                </div>
               </Card.Body>
             </Card>
           </Col>
