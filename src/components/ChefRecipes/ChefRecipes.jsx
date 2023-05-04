@@ -30,7 +30,7 @@ const ChefRecipes = () => {
       <div className=" text-center">
         <img
           className="w-full img-thumbnail"
-          style={{ height: "300px", width: "100%" }}
+          style={{ height: "550px", width: "100%" }}
           src={chef_picture_url}
           alt=""
         />

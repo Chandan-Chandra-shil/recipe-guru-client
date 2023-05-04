@@ -25,29 +25,23 @@ const Home = () => {
       <Carousel fade className="mb-5">
         <Carousel.Item>
           <img className="d-block w-100" src={bannerOne} alt="First slide" />
-          <Carousel.Caption>
-            <h3 className="text-dark text-warning">Special Food</h3>
-          </Carousel.Caption>
+          
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={bannerTwo} alt="Second slide" />
 
-          <Carousel.Caption>
-            <h3 className="text-dark text-warning">Special Food</h3>
-          </Carousel.Caption>
+          
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={bannerThree} alt="Third slide" />
 
-          <Carousel.Caption>
-            <h3 className="text-dark text-warning">Special Food</h3>
-          </Carousel.Caption>
+          
         </Carousel.Item>
       </Carousel>
       <Container>
         <div className="text-center mb-5">
           <h1 className="text-warning fs-1 mb-3">Our special chefs</h1>
-          <p className="fs-5" >
+          <p className="fs-5">
             Chefs are culinary professionals trained in all aspects of food
             preparation.Their main responsibilities include planning menus,
             <br></br>
