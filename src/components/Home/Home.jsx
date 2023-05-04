@@ -50,7 +50,7 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="row">
+        <div className="row mb-5">
           {details ? (
             details.map((detail) => (
               <div key={detail.id} className="col-lg-4 col-md-6 col-sm-12 mb-4">

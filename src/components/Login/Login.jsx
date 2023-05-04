@@ -87,8 +87,8 @@ const Login = () => {
             required
           />
           <Form.Text className="text-muted">
-            <p>{logInError}</p>
-            <h6>{success}</h6>
+            <p className="text-danger">{logInError}</p>
+            <h6 className="text-success">{success}</h6>
           </Form.Text>
         </Form.Group>
 
