@@ -1,21 +1,14 @@
-import React, { useEffect, useState } from "react";
-import {
-  Button,
-  Card,
-  Carousel,
-  Col,
-  Container,
-  ListGroup,
-  Row,
-} from "react-bootstrap";
+import React from "react";
+import { Carousel, Container } from "react-bootstrap";
 
 import bannerOne from "../../assets/banner_01.jpg";
 import bannerTwo from "../../assets/banner_02.jpg";
 import bannerThree from "../../assets/banner_03.jpg";
 
 import { Link, useLoaderData } from "react-router-dom";
-import Services from "./Services/Services";
+
 import AboutUs from "./AboutUs/AboutUs";
+import PopularRecipe from "./PopularRecipe/PopularRecipe";
 
 const Home = () => {
   const details = useLoaderData();
@@ -25,17 +18,12 @@ const Home = () => {
       <Carousel fade className="mb-5">
         <Carousel.Item>
           <img className="d-block w-100" src={bannerOne} alt="First slide" />
-          
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={bannerTwo} alt="Second slide" />
-
-          
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={bannerThree} alt="Third slide" />
-
-          
         </Carousel.Item>
       </Carousel>
       <Container>
@@ -86,7 +74,7 @@ const Home = () => {
           )}
         </div>
       </Container>
-      <Services></Services>
+      <PopularRecipe></PopularRecipe>
       <AboutUs></AboutUs>
     </div>
   );

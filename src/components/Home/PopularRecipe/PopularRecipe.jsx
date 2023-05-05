@@ -3,7 +3,7 @@ import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 
 import { ToastContainer, toast } from "react-toastify";
 
-const Services = () => {
+const PopularRecipe = () => {
   const notify = () => toast("Complete Your Order!");
   return (
     <div className="bg-light">
@@ -124,4 +124,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default PopularRecipe;

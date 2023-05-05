@@ -10,6 +10,7 @@ Firebase: [ Recipe Guru ]( https://recipe-guru-5e668.web.app/)
 - user login github
 - when click view recipe button user redirect login page then see chef details
 - user see recipe name  and detail this recipe
+- react to pdf download 
 
 
 
