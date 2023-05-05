@@ -1,11 +1,24 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
+import './Blog.css'
+
+import Pdf from "react-to-pdf";
+const ref = React.createRef();
+
 
 const Blog = () => {
   return (
-    <div className="mt-4 mb-5">
-      <h2 className="text-center fw-bold text-warning  ">Blog Page</h2>
-      <Container>
+    <div className="mt-4 mb-5 ">
+      <p className="text-end me-md-5 pe-2 ">
+        <Button>
+          <Pdf targetRef={ref} filename="code-example.pdf">
+            {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
+          </Pdf>
+        </Button>
+      </p>
+
+      <Container ref={ref}>
+        <h2 className="text-center fw-bold text-warning  mb-5 ">Blog Page</h2>
         <h4 className="fw-semibold m-0 p-0">
           1. Tell us the differences between uncontrolled and controlled
           components?
@@ -41,7 +54,7 @@ const Blog = () => {
             case and the desired behavior of the component.
           </p>
         </p>
-        
+
         <h4 className="fw-semibold  m-0 p-0">
           2. How to validate React props using PropTypes ?
         </h4>
